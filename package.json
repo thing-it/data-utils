@@ -1,0 +1,26 @@
+{
+  "name": "data-utils",
+  "version": "0.0.1",
+  "description": "Data utility functions for thing-it",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thing-it/data-utils.git"
+  },
+  "keywords": [
+    "gcp",
+    "google",
+    "cloud",
+    "functions",
+    "data",
+    "analytics"
+  ],
+  "author": "npalmer@acm.org",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thing-it/data-utils/issues"
+  },
+  "homepage": "https://github.com/thing-it/data-utils#readme"
+}
