@@ -1,7 +1,8 @@
 {
-  "name": "data-utils",
-  "version": "0.0.1",
+  "name": "thing-it-data-utils",
+  "version": "0.0.3",
   "description": "Data utility functions for thing-it",
+  "main": "utils.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

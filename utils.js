@@ -46,7 +46,7 @@ exports.debugJsonObject = function (objectOfInterest) {
  * @param uuid
  */
 exports.parseId = function(uuid) {
-    return uuid.replace(/-/g, '');
+    return uuid.replace(/[-'"+]/g, '');
 };
 
 /**
