@@ -6,6 +6,46 @@
 'use strict';
 
 /**
+ * Given JSON object, extract array of values only for insert via Cloud SQL
+ * May have other uses, almost certainly has to be a better way to handle this
+ * 
+ * @param data
+ */
+exports.extractValuesForSql = function(data) {
+    var array = [];
+
+    // Convert to Array from JSON object
+    for (var i in data) {
+        var item = data[i];
+        var outer = [];
+        if (typeof item === "object") {
+            for (var j in item) {
+                var temp = [];
+                temp.push(j);
+                temp.push(item[j]);
+                outer.push(temp);
+            }
+        }
+        if (outer.length) {
+            array.push(outer);
+        }
+    }
+
+    // Extract just the values (not the keys)
+    var values = [];
+
+    for (var p in array) {
+        var mini = [];
+        for (var q in array[p]) {
+            mini.push(array[p][q][1]);
+        }
+        values.push(mini);
+    }
+
+    return values;
+};
+
+/**
  * Background Cloud Function to be triggered by Pub/Sub.
  *
  * @param objectOfInterest JSON event.
